@@ -5,7 +5,5 @@ Rails.application.routes.draw do
  
  #generate user routes
  resources :users
- resources :degrees
- resources :employers
 
 end
