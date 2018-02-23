@@ -1,0 +1,27 @@
+-# Ethan Widen - 2/20/18
+= link_to 'Return to Main', controller: 'welcome'
+%h1 All IRB forms
+
+#flash-display
+    - flash.each do |type, msg|
+        %div{:class => "alert alert-#{type == :notice ? "success" : type} fadeout", "data-dismiss" => "alert"}
+            %button.close &times;
+            = msg if msg.is_a?(String)
+%table#forms.table
+    %thead
+        %tr
+            %th Project Title
+            %th Submission Date
+            %th Result
+            %th Researcher
+            %th Edit
+    %tbody
+        - @forms.each do|form|
+            %tr
+                %td= form.title
+                %td= form.submission_date
+                %td= form.result
+                %td= form.researcher
+                %td= link_to "Edit #{form.title}", edit_form_path(form)
+                
+= link_to 'Add new form', new_form_path

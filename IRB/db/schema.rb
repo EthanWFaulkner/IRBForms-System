@@ -11,28 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221210808) do
+ActiveRecord::Schema.define(version: 20180223023810) do
 
-  create_table "degrees", force: :cascade do |t|
+  create_table "form_elements", force: :cascade do |t|
+    t.integer  "form_id"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "employers", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "user_image"
-    t.integer  "google_id"
+    t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  add_index "form_elements", ["form_id"], name: "index_form_elements_on_form_id"
+
+  create_table "forms", force: :cascade do |t|
+    t.string   "title"
+    t.date     "submission_date"
+    t.string   "result"
+    t.string   "researcher"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

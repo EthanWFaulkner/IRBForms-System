@@ -5,5 +5,7 @@ Rails.application.routes.draw do
  
  #generate user routes
  resources :users
+ resources :forms
+ resources :form_elements
 
 end

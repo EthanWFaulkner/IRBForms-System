@@ -1,0 +1,18 @@
+-# Ethan Widen  - 2/21/18
+= link_to 'Return to List of Forms', forms_path
+%h2 Edit IRB Form
+= form_tag form_path(@form), :method => :put do
+    
+    %div{:class => 'form-group'}
+        = label :form, :title, 'Title'
+        = text_field :form, :title, :class => 'form-control'
+    
+    %div{:class => 'form-group'}
+        = label :form, :submission_date, 'Submission Date'
+        = date_field :form, :submission_date, :class => 'form-control'
+        
+    %div{:class => 'form-group'}
+        = label :form, :researcher, 'Researcher Name'
+        = text_field :form, :researcher, :class => 'form-control'
+    
+    = submit_tag 'Save Changes'
