@@ -1,5 +1,5 @@
-# Alumni-Tracking-System
+# IRB Form System
 
-This system is used by Faulkner University to help track the success of their alumni after they graduate.  
+This system is used by Faulkner University to maintain IRB forms.
 
 The system uses the Ruby on Rails framework. 
