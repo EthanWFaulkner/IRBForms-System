@@ -1,18 +1,36 @@
--# Ethan Widen  - 2/21/18
-= link_to 'Return to List of Forms', forms_path
-%h2 Create New IRB Form
-= form_tag forms_path, :method => :post do
+%h2 New IRB Form
+// = form_tag forms_path, :method => :post do
     
-    %div{:class => 'form-group'}
-        = label :form, :title, 'Title'
-        = text_field :form, :title, :class => 'form-control'
+//      %div{:class => 'form-group'}
+//         = label :form, :project_name, 'Project Name'
+//         = text_field :form, :project_name, :class => 'form-control'
     
+//     %div{:class => 'form-group'}
+//         = label :form, :full_board, 'Full Board (greater than minimal risk to humans or non-human animals, use of hazardous materials, any greater than minimal risk to society or the environment)'
+//         = radio_button :form, :full_board, :class => 'form-control'
+//         = label :form, :full_board, 'Expedited Review (less than minimal risk to humans, non-human animals, and the environment)'
+//         = radio_button :form, :full_board, :class => 'form-control
+//          = label :form, :full_board, '(no risk to humans, non-human animals, society, or the environment)'
+//         = radio_button :form, :full_board, :class => 'form-control'
+    
+//     = submit_tag 'Save Changes'
+
+= form_for @form, url: forms_path, :method => :post do |f|
+
     %div{:class => 'form-group'}
-        = label :form, :submission_date, 'Submission Date'
-        = date_field :form, :submission_date, :class => 'form-control'
+        = label :form, :full_board, 'Project Name'
+        = f.text_field :project_name, :class => 'form-control'
         
-    %div{:class => 'form-group'}
-        = label :form, :researcher, 'Researcher Name'
-        = text_field :form, :researcher, :class => 'form-control'
+    %div{:class => 'form-check'}
+        = f.radio_button :full_board, "Full Board", :class => 'form-check-input'
+        = label :form, :full_board, 'Full Board (greater than minimal risk to humans or non-human animals, use of hazardous materials, any greater than minimal risk to society or the environment)', :class => 'form-check-label'
+        
+        = f.radio_button :expedited_review, "Expedited Review", :class => 'form-check-input'
+        = label :form, :full_board, 'Expedited Review (less than minimal risk to humans, non-human animals, and the environment)', :class => 'form-check-label'
+        
+        = f.radio_button :exempt_review, "Exempt Review", :class => 'form-check-input'
+        = label :form, :full_board, '(no risk to humans, non-human animals, society, or the environment)', :class => 'form-check-label'
     
-    = submit_tag 'Save Changes'
+    = f.submit "Submit"
+    
+    

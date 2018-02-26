@@ -4,8 +4,6 @@ Rails.application.routes.draw do
  root 'welcome#index'
  
  #generate user routes
- resources :users
  resources :forms
- resources :form_elements
 
 end
