@@ -10,12 +10,20 @@
         %tr
             %th Project Name
             %th Purpose
-            %th Edit
+            %th Edit Section 1
+            %th Edit Section 2
+            %th Edit Section 3
+            %th Edit Section 4
+            %th Edit Section 5
     %tbody
         - @forms.each do|form|
             %tr
-                %td= form.project_name
-                %td= form.purpose
-                %td= link_to "Edit #{form.project_name}", edit_form_path(form)
+                %td= form.section1.project_name
+                %td= form.section1.purpose
+                %td= link_to "Edit", edit_section_1(form)
+                %td= link_to "Edit", edit_section_2(form)
+                %td= link_to "Edit", edit_section_3(form)
+                %td= link_to "Edit", edit_section_4(form)
+                %td= link_to "Edit", edit_section_5(form)
                 
-= link_to 'Add new form', new_form_path
+= link_to 'Add new form', new_section1_path

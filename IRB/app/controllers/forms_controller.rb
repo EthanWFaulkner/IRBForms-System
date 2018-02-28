@@ -1,6 +1,5 @@
 class FormsController < ApplicationController
-    
-     def form_params
+    def form_params
         params.require(:form).permit(:project_name)
     end
     

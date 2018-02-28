@@ -11,18 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226031524) do
+ActiveRecord::Schema.define(version: 20180228145414) do
 
   create_table "forms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "section1s", force: :cascade do |t|
     t.string   "project_name"
     t.boolean  "full_board"
     t.boolean  "expedited_review"
     t.boolean  "exempt_review"
     t.boolean  "courtesy_review"
     t.text     "expedited_or_exempt_review_just"
+    t.integer  "form_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "section1s", ["form_id"], name: "index_section1s_on_form_id"
+
+  create_table "section2s", force: :cascade do |t|
     t.text     "abstract_summary"
     t.text     "purpose"
     t.text     "content_area"
+    t.integer  "form_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "section2s", ["form_id"], name: "index_section2s_on_form_id"
+
+  create_table "section3s", force: :cascade do |t|
     t.text     "intended_population_characteristics"
     t.boolean  "faulkner_students_recruited"
     t.boolean  "faulkner_employees_recruited"
@@ -35,6 +56,14 @@ ActiveRecord::Schema.define(version: 20180226031524) do
     t.text     "descr_of_comp"
     t.text     "descr_selection_proc"
     t.text     "assure_informed_consent"
+    t.integer  "form_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "section3s", ["form_id"], name: "index_section3s_on_form_id"
+
+  create_table "section4s", force: :cascade do |t|
     t.text     "data_collection_proc"
     t.text     "location_organization_data_collection"
     t.text     "data_to_be_collected"
@@ -47,11 +76,22 @@ ActiveRecord::Schema.define(version: 20180226031524) do
     t.text     "who_has_data_access"
     t.text     "analysis_methods"
     t.text     "results_desseminated"
-    t.text     "sources_of_funding"
-    t.text     "researcher_competency"
-    t.text     "irb_comments"
+    t.integer  "form_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end
+
+  add_index "section4s", ["form_id"], name: "index_section4s_on_form_id"
+
+  create_table "section5s", force: :cascade do |t|
+    t.text     "sources_of_funding"
+    t.text     "researcher_competency"
+    t.text     "irb_comments"
+    t.integer  "form_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "section5s", ["form_id"], name: "index_section5s_on_form_id"
 
 end
