@@ -17,13 +17,15 @@
             %th Edit Section 5
     %tbody
         - @forms.each do|form|
+        - section1 = form.section1
             %tr
-                %td= form.section1.project_name
-                %td= form.section1.purpose
-                %td= link_to "Edit", edit_section_1(form)
-                %td= link_to "Edit", edit_section_2(form)
-                %td= link_to "Edit", edit_section_3(form)
-                %td= link_to "Edit", edit_section_4(form)
-                %td= link_to "Edit", edit_section_5(form)
+                - #byebug
+                %td= section1.project_name
+                %td= section1.approval_type
+                %td= link_to "Edit", edit_section1_path(form)
+                %td= link_to "Edit", edit_section2_path(form)
+                %td= link_to "Edit", edit_section3_path(form)
+                %td= link_to "Edit", edit_section4_path(form)
+                %td= link_to "Edit", edit_section5_path(form)
                 
 = link_to 'Add new form', new_section1_path

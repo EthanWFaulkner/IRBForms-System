@@ -20,10 +20,7 @@ ActiveRecord::Schema.define(version: 20180228145414) do
 
   create_table "section1s", force: :cascade do |t|
     t.string   "project_name"
-    t.boolean  "full_board"
-    t.boolean  "expedited_review"
-    t.boolean  "exempt_review"
-    t.boolean  "courtesy_review"
+    t.string   "approval_type"
     t.text     "expedited_or_exempt_review_just"
     t.integer  "form_id"
     t.datetime "created_at",                      null: false
