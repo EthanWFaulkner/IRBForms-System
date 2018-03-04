@@ -10,6 +10,7 @@
         %tr
             %th Project Name
             %th Purpose
+            %th Human IRB Form?
             %th Edit Section 1
             %th Edit Section 2
             %th Edit Section 3
@@ -22,10 +23,14 @@
                 - #byebug
                 %td= section1.project_name
                 %td= section1.approval_type
+                %td= form.human
                 %td= link_to "Edit", edit_section1_path(form)
                 %td= link_to "Edit", edit_section2_path(form)
-                %td= link_to "Edit", edit_section3_path(form)
+                %td= link_to "Edit", form.human == "true" ? edit_section3_path(form) : edit_section3animal_path(form)
                 %td= link_to "Edit", edit_section4_path(form)
                 %td= link_to "Edit", edit_section5_path(form)
-                
-= link_to 'Add new form', new_section1_path
+
+%p        
+    = link_to 'New Human IRB Form', generate_form_path({human: true})
+%p
+    = link_to 'New Non-Human Animal IRB Form', generate_form_path({human: false})

@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228145414) do
+ActiveRecord::Schema.define(version: 20180304050601) do
 
   create_table "forms", force: :cascade do |t|
+    t.boolean  "human"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "formtexts", force: :cascade do |t|
+    t.integer  "section"
+    t.integer  "sub_section"
+    t.boolean  "human_form"
+    t.text     "text_value"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "section1s", force: :cascade do |t|
@@ -39,6 +49,23 @@ ActiveRecord::Schema.define(version: 20180228145414) do
   end
 
   add_index "section2s", ["form_id"], name: "index_section2s_on_form_id"
+
+  create_table "section3animals", force: :cascade do |t|
+    t.string   "describe_animals"
+    t.string   "housing_and_transport"
+    t.string   "ethical_care_in_altered_conditions"
+    t.string   "protect_humans"
+    t.string   "justification_for_animals"
+    t.string   "foreseen_pain"
+    t.string   "animals_after_study"
+    t.string   "veterinarian_present"
+    t.string   "other_helpful_info"
+    t.integer  "form_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "section3animals", ["form_id"], name: "index_section3animals_on_form_id"
 
   create_table "section3s", force: :cascade do |t|
     t.text     "intended_population_characteristics"

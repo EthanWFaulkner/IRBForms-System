@@ -13,11 +13,18 @@ class CreateSection3s < ActiveRecord::Migration
       t.text :descr_of_comp
       t.text :descr_selection_proc
       t.text :assure_informed_consent
+      t.belongs_to :form, index: true
       t.integer :form_id
       t.timestamps null: false
     end
     
-    add_index :section3s, :form_id
+    add_index :section3s, :form_id if !index_exists?(:section3s, :form_id)
     add_foreign_key :section3s, :forms
   end
+  
+  def down
+    remove_index :section3s, :form_id
+    remove_foreign_key :section3s, :forms
+  end
+  
 end

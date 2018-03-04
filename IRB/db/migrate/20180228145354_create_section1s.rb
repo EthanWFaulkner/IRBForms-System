@@ -1,8 +1,8 @@
 class CreateSection1s < ActiveRecord::Migration
   def change
     create_table :section1s do |t|
-      t.string 'project_name'
-      t.string 'approval_type'
+      t.string :project_name
+      t.string :approval_type
       t.text :expedited_or_exempt_review_just
       t.belongs_to :form, index: true
       t.integer :form_id

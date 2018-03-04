@@ -2,19 +2,33 @@
 = form_tag('/section1') do
     
     %div{:class => 'form-group'}
-        = label :section1, :project_name, 'Project Name'
+        = label :section1, :project_name, @section1text[0].text_value
         = text_field :section1, :project_name, :class => 'form-control'
-        
+    
+    %p
+        = @section1text[1].text_value
+    
     %div{:class => 'form-check'}
         = radio_button :section1, :approval_type, "Full Board", { :class => 'form-check-input', :value => 'full' }
-        = label :section1, :approval_type, 'Full Board (greater than minimal risk to humans or non-human animals, use of hazardous materials, any greater than minimal risk to society or the environment)', :class => 'form-check-label'
+        = label :section1, :approval_type, @section1text[2].text_value, :class => 'form-check-label'
+    
     %div{:class => 'form-check'}
         = radio_button :section1, :approval_type, "Expedited Review", { :class => 'form-check-input', :value => 'expedited' }
-        = label :section1, :approval_type, 'Expedited Review (less than minimal risk to humans, non-human animals, and the environment)', :class => 'form-check-label'
+        = label :section1, :approval_type, @section1text[3].text_value, :class => 'form-check-label'
+    
     %div{:class => 'form-check'}
         = radio_button :section1, :approval_type, "Exempt Review", { :class => 'form-check-input', :value => 'exempt' }
-        = label :section1, :approval_type, '(no risk to humans, non-human animals, society, or the environment)', :class => 'form-check-label'
+        = label :section1, :approval_type, @section1text[4].text_value, :class => 'form-check-label'
+        
+    %div{:class => 'form-check'}
+        = radio_button :section1, :approval_type, "Courtesy Review", { :class => 'form-check-input', :value => 'courtesy' }
+        = label :section1, :approval_type, @section1text[5].text_value, :class => 'form-check-label'
     
-    = submit_tag "Submit", :class => 'btn btn-primary'
+    %div{:class => 'form-group'}
+        = label :section1, :expedited_or_exempt_review_just, @section1text[6].text_value
+        = text_area :section1, :expedited_or_exempt_review_just, :class => 'form-control'
+    
+    %div{:class => 'form-group'}
+        = submit_tag "Submit", :class => 'btn btn-primary'
     
     

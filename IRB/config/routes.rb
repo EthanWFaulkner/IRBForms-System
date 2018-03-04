@@ -8,7 +8,10 @@ Rails.application.routes.draw do
  resources :section1
  resources :section2
  resources :section3
+ resources :section3animal
  resources :section4
  resources :section5
+ 
+ match '/form/generateForm', to: 'forms#generateForm', via: [:all], as: :generate_form
 
 end
