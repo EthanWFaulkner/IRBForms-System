@@ -29,6 +29,17 @@ Research projects funded by “any department, agency, or instrumentality of the
     [3, 7, "Will a licensed veterinarian be utilized to facilitate or supervise the process?  [Consult the AVMA Guidelines on Euthenasia for more information.]"],
     [3, 8, "What other information may be helpful in determining the justification of the use of non-human animals and the assurance of appropriate care."],
     
+    [4, 0, "Describe what data will be collected."],
+    [4, 1, "List and describe all locations and organizations where data is to be collected.  If non-human animals housed by other organizations are used, assurance of their appropriate use and care must be provided, as well as approval by the applicable organization."],
+    [4, 2, "Describe the procedures of data collection to be used in the project."],
+    [4, 3, "How long will the data collection take place? [Note: Longitudinal studies spanning more than a period of one year require annual continuation application and approval.]"],
+    [4, 4, "Describe the instruments, equipment, or materials to be used for data collection."],
+    [4, 5, "Where and how will data be stored?"],
+    [4, 6, "How long will data be retained?  When and how will it be destroyed? (Note: Many discipline standards and publications require retention of data for 7-10 years after completion of project or publication to be made available for other researchers and verification purposes)."],
+    [4, 7, "Who will have access to the data until destroyed?  How will it be made available for inspection by other researchers or for verification purposes?"],
+    [4, 8, "Describe the methods of analysis and measures (e.g. statistical procedures, qualitative analysis method, etc.)"],
+    [4, 9, "How will the results of the research be used and disseminated (e.g. publication, conference presentation, educational dissemination)? "],
+    
 ]
 
 nonhuman_form_text.each do |section, subsection, text|

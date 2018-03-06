@@ -17,7 +17,12 @@ class CreateSection4s < ActiveRecord::Migration
       t.timestamps null: false
     end
     
-    add_index :section4s, :form_id
+    add_index :section4s, :form_id if !index_exists?(:section4s, :form_id)
     add_foreign_key :section4s, :forms
+  end
+  
+  def down
+    remove_index :section4s, :form_id
+    remove_foreign_key :section4s, :forms
   end
 end

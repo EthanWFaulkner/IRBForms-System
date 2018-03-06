@@ -27,7 +27,7 @@ class FormsController < ApplicationController
             @form.section1 = @section1
             @form.section2 = Section2.create!()
             @form.section3animal = Section3animal.create!()
-            @form.section4 = Section4.create!()
+            @form.section4animal = Section4animal.create!()
             @form.section5 = Section5.create!()
         end
         

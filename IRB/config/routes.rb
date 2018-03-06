@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
- root 'welcome#index'
+ root 'forms#index'
  
  #generate user routes
  resources :forms
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
  resources :section3
  resources :section3animal
  resources :section4
+ resources :section4animal
  resources :section5
  
  match '/form/generateForm', to: 'forms#generateForm', via: [:all], as: :generate_form

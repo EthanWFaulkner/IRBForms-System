@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304050601) do
+ActiveRecord::Schema.define(version: 20180306040108) do
 
   create_table "forms", force: :cascade do |t|
     t.boolean  "human"
@@ -86,6 +86,24 @@ ActiveRecord::Schema.define(version: 20180304050601) do
   end
 
   add_index "section3s", ["form_id"], name: "index_section3s_on_form_id"
+
+  create_table "section4animals", force: :cascade do |t|
+    t.text     "what_data"
+    t.text     "location_organization_data_collection"
+    t.text     "procedures_of_data_collection"
+    t.text     "period_of_data_collection"
+    t.text     "data_collection_instruments"
+    t.text     "data_stored_how"
+    t.text     "length_of_data_retention"
+    t.text     "who_has_data_access"
+    t.text     "analysis_methods"
+    t.text     "results_desseminated"
+    t.integer  "form_id"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "section4animals", ["form_id"], name: "index_section4animals_on_form_id"
 
   create_table "section4s", force: :cascade do |t|
     t.text     "data_collection_proc"

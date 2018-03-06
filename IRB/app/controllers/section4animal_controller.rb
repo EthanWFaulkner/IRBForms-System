@@ -1,7 +1,7 @@
-class Section4Controller < ApplicationController
+class Section4animalController < ApplicationController
     
-    def section4_params
-        params.require(:section4).permit(
+    def section4animal_params
+        params.require(:section4animal).permit(
         :what_data,
         :location_organization_data_collection,
         :procedures_of_data_collection,
@@ -16,14 +16,14 @@ class Section4Controller < ApplicationController
     end
     
     def edit
-        @section4text = Formtext.where({:section => 4, :human_form => true}).order("sub_section ASC").all
+        @section4animaltext = Formtext.where({:section => 4, :human_form => false}).order("sub_section ASC").all
         #byebug
-        @section4 = Section4.find params[:id]
+        @section4animal = Section4animal.find params[:id]
     end
     
     def update
-        @section4 = Section4.find params[:id]
-        @section4.update_attributes!(section4_params)
+        @section4animal = Section4animal.find params[:id]
+        @section4animal.update_attributes!(section4_params)
         flash[:success] = "Section 3 was successfully updated."
         redirect_to forms_path
     end

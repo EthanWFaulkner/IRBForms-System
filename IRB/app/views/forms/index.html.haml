@@ -27,7 +27,7 @@
                 %td= link_to "Edit", edit_section1_path(form)
                 %td= link_to "Edit", edit_section2_path(form)
                 %td= link_to "Edit", form.human == "true" ? edit_section3_path(form) : edit_section3animal_path(form)
-                %td= link_to "Edit", edit_section4_path(form)
+                %td= link_to "Edit", form.human == "true" ? edit_section4_path(form) : edit_section4animal_path(form)
                 %td= link_to "Edit", edit_section5_path(form)
 
 %p        
