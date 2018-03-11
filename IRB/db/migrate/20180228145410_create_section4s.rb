@@ -13,6 +13,7 @@ class CreateSection4s < ActiveRecord::Migration
       t.text :who_has_data_access
       t.text :analysis_methods
       t.text :results_desseminated
+      t.belongs_to :form, index: true
       t.integer :form_id
       t.timestamps null: false
     end

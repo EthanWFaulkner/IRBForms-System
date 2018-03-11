@@ -24,7 +24,7 @@ class Section4Controller < ApplicationController
     def update
         @section4 = Section4.find params[:id]
         @section4.update_attributes!(section4_params)
-        flash[:success] = "Section 3 was successfully updated."
+        flash[:success] = "Section 4 was successfully updated."
         redirect_to forms_path
     end
     

@@ -10,7 +10,10 @@ Rails.application.routes.draw do
  resources :section4
  resources :section4animal
  resources :section5
+ resources :researcher
  
  match '/form/generateForm', to: 'forms#generateForm', via: [:all], as: :generate_form
+ match '/form/addResearcher/:form', to: 'forms#addResearcher', via: [:all], as: :add_researcher
+ match '/researcher/showFormResearchers/:form', to: 'researcher#showFormResearchers', via: [:all], as: :show_form_researchers
 
 end

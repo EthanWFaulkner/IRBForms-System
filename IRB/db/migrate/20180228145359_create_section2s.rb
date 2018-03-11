@@ -13,7 +13,7 @@ class CreateSection2s < ActiveRecord::Migration
     add_foreign_key :section2s, :forms
   end
   
-   def down
+  def down
     remove_index :section2s, :form_id
     remove_foreign_key :section2s, :forms
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306040108) do
+ActiveRecord::Schema.define(version: 20180311023311) do
 
   create_table "forms", force: :cascade do |t|
     t.boolean  "human"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20180306040108) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "researchers", force: :cascade do |t|
+    t.text     "name"
+    t.text     "position"
+    t.text     "email"
+    t.text     "phone"
+    t.text     "department"
+    t.text     "researcher_type"
+    t.integer  "form_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "researchers", ["form_id"], name: "index_researchers_on_form_id"
 
   create_table "section1s", force: :cascade do |t|
     t.string   "project_name"
@@ -69,11 +83,11 @@ ActiveRecord::Schema.define(version: 20180306040108) do
 
   create_table "section3s", force: :cascade do |t|
     t.text     "intended_population_characteristics"
-    t.boolean  "faulkner_students_recruited"
-    t.boolean  "faulkner_employees_recruited"
-    t.boolean  "faulkner_not_recruited"
+    t.string   "students_or_employees_recruited"
     t.integer  "min_participants"
     t.integer  "max_participants"
+    t.text     "vulnerable_groups"
+    t.text     "vulnerable_groups_other"
     t.text     "vulnerable_rationale"
     t.text     "protections_in_place"
     t.text     "descr_of_all_risk"

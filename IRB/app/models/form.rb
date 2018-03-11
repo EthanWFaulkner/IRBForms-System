@@ -6,4 +6,5 @@ class Form < ActiveRecord::Base
     has_one :section4
     has_one :section4animal
     has_one :section5
+    has_many :researcher
 end

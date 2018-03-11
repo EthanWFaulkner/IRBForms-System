@@ -40,7 +40,61 @@ Research projects funded by “any department, agency, or instrumentality of the
     [4, 8, "Describe the methods of analysis and measures (e.g. statistical procedures, qualitative analysis method, etc.)"],
     [4, 9, "How will the results of the research be used and disseminated (e.g. publication, conference presentation, educational dissemination)? "],
     
+    [5, 0, "Financial and Conflicts of Interest
+List any and all sources of funding for the project, any forms of remuneration to researchers, assistants, or others involved in the research, and any potential financial or other possible conflicts of interests whether financial, personal, or otherwise.  Copies of grant approvals or other relevant documentation may be included as an appendix. "],
+    [5, 1, "Qualifications of Researchers
+Ethical and federal guidelines require researchers to be competent in the principles of the research they conduct or oversee.  Faculty members with coursework in research ethics and methods and/or who are qualified to teach such generally meet this requirement.  Students taking or having completed such a course may meet this requirement under supervision of the qualified faculty advisor.  Researchers completing an approved training course will meet this requirement in most cases.  See some examples at:  OLAW-EDUCATION for guidance and available resources.   Please provide assurance below regarding the competency of the P.I. and other researchers to conduct research, including that with non-human animal subjects.  Researchers conducting specialized research areas may also be required to verify competency in the specialized area. "],
+    [5, 2, "IRB member comments / suggestions:"],
+    
+    [6, 0, "By signing this application, I/we agree that all information contained herein is true and correct to the best of my/our knowledge.  All applicable information has been disclosed.  Further, assurance is given that research will conducted only within the approval guidelines and parameters, and that all ethical, moral, legal, and discipline specific expectations of conduct will be followed.  Should any relevant portion of the research approval need to be changed, a revised approval will be sought before conducting or continuing research.  
+Further, it is acknowledged that IRB approval does in no way release the researchers from guilt, liability, or culpability in legally and ethically conducting research and protection of humans or animals.  Competency of all individuals involved has been verified and assured.  All data analysis and reporting will be conducted with complete and total transparency and accuracy.    
+
+Note: The IRB has the authority to suspend or terminate approval of research that is not being conducted in accordance with the IRB's requirements, legal or ethical guidelines, or that has been associated with unexpected serious harm to humans, animals, or society.
+"],
+    [6, 1, "Principle Investigator / Faculty Advisor (all student research must list a Faculty Advisor as P.I.)"],
+    [6, 2, "Name:"],
+    [6, 3, "Position/Title:"],
+    [6, 4, "E-mail:"],
+    [6, 5, "Phone:"],
+    [6, 6, "Department:"],
+    [6, 7, "Faculty"],
+    [6, 8, "Staff"],
+    [6, 9, "Other"],
+
 ]
+
+human_form_text = [
+    [3, 0, "Describe the intended population and participant characteristics. "],
+    [3, 1, "Will Faulkner students or employees be recruited to participate?"],
+    [3, 2, "Students"],
+    [3, 3, "Employees"],
+    [3, 4, "Neither"],
+    [3, 5, "How many participants will be sought for this project?"],
+    [3, 6, "Minimum"],
+    [3, 7, "Maximum"],
+    [3, 8, "Will the participants include any of the following a vulnerable or at-risk population groups?"],
+    [3, 9, "Children / Minors"],
+    [3, 10, "Prisoners "],
+    [3, 11, "Institutionalized persons"],
+    [3, 12, "Students"],
+    [3, 13, "Pregnant women"],
+    [3, 14, "Fetuses/Neonates"],
+    [3, 15, "Non-English speaking persons"],
+    [3, 16, "Educationally challenged persons"],
+    [3, 17, "Economically challenged persons"],
+    [3, 18, "Other"],
+    [3, 19, "Provide rationale for use of vulnerable populations or at-risk participants."],
+    [3, 20, "Describe what protections will be in place, including those to avoid potential coercion or undue influence, as well as any debriefing procedures or services. [Note: Vulnerable populations require additional protections be explained in this area related to the additional potential risk]."],
+    [3, 21, "Describe all potential risks and benefits to participants and to society.  The estimated degree of risk and potential may also be included.  [Note: This question is a key component to the IRB decision making process!] Risks may include (but are not limited to) deception, coercion, breach of confidentiality, intrapersonal or psychological conflict, invasion of privacy, economic risks, revelation of illegal activity, risk of bodily harm, etc."],
+    [3, 22, "List any compensation, inducements, or incentives offered.  Provide justification for their inclusion, and assurance they will not be used as means of coercion.  (Note: Monetary or like-kind inducements greater than what would be considered a 'thank-you', or reimbursement of expenses are generally not approved)."],
+    [3, 23, "Describe in detail, the procedure for selecting and recruiting participants.  Include (a) how participant selection will be equitable, (b) how groups will be assigned (if applicable), (c) how the intended participants adequately reflect the population, and (d) any participant characteristics that may result in participants being excluded from participation or final analysis. Recruiting materials (e.g. flyers, e-mail samples) may be included as an appendix."],
+    [3, 24, "How will informed consent be assured? [Note: Unless specifically waived by the IRB, Informed Consent is required for all research involving human subjects and must be adequately documented.  Researchers should include copies of any Informed Consent or related forms to be used in conducting the research.]"],
+
+]
+
+human_form_text.each do |section, subsection, text|
+  Formtext.create(section: section, sub_section: subsection, human_form: true, text_value: text)
+end
 
 nonhuman_form_text.each do |section, subsection, text|
   Formtext.create(section: section, sub_section: subsection, human_form: false, text_value: text)

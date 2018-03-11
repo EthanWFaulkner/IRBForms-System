@@ -11,8 +11,13 @@ class FormsController < ApplicationController
         @form = Form.new
     end
     
+    def addResearcher
+        @form = Form.find_by_id(params[:form])
+        @researcher = @form.researcher.create()
+        redirect_to edit_researcher_path(@researcher)
+    end
+    
     def generateForm
-        #byebug
         if params[:human] == "true"
             @form = Form.create!({:human => true})
             @section1 = Section1.create!()
@@ -21,6 +26,7 @@ class FormsController < ApplicationController
             @form.section3 = Section3.create!()
             @form.section4 = Section4.create!()
             @form.section5 = Section5.create!()
+            @form.researcher.create()
         else
             @form = Form.create!({:human => false})
             @section1 = Section1.create!()
@@ -29,6 +35,7 @@ class FormsController < ApplicationController
             @form.section3animal = Section3animal.create!()
             @form.section4animal = Section4animal.create!()
             @form.section5 = Section5.create!()
+            @form.researcher.create()
         end
         
         flash[:notice] = "#{@section1.project_name} was successfully created."

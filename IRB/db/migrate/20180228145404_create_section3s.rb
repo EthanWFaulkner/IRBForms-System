@@ -2,11 +2,11 @@ class CreateSection3s < ActiveRecord::Migration
   def change
     create_table :section3s do |t|
       t.text :intended_population_characteristics
-      t.boolean :faulkner_students_recruited
-      t.boolean :faulkner_employees_recruited
-      t.boolean :faulkner_not_recruited
+      t.string :students_or_employees_recruited
       t.integer :min_participants
       t.integer :max_participants
+      t.text :vulnerable_groups
+      t.text :vulnerable_groups_other
       t.text :vulnerable_rationale
       t.text :protections_in_place
       t.text :descr_of_all_risk

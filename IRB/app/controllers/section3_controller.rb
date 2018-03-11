@@ -3,11 +3,11 @@ class Section3Controller < ApplicationController
     def section3_params
         params.require(:section3).permit(
         :intended_population_characteristics,
-        :faulkner_students_recruited,
-        :faulkner_employees_recruited,
-        :faulkner_not_recruited,
+        :students_or_employees_recruited,
         :min_participants,
         :max_participants,
+        :vulnerable_groups,
+        :vulnerable_groups_other,
         :vulnerable_rationale,
         :protections_in_place,
         :descr_of_all_risk,
@@ -19,11 +19,12 @@ class Section3Controller < ApplicationController
     
     def edit
         @section3text = Formtext.where({:section => 3, :human_form => true}).order("sub_section ASC").all
-        #byebug
         @section3 = Section3.find params[:id]
+        #byebug
     end
     
     def update
+        
         @section3 = Section3.find params[:id]
         @section3.update_attributes!(section3_params)
         flash[:success] = "Section 2 was successfully updated."
