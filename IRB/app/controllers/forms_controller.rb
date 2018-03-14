@@ -26,7 +26,7 @@ class FormsController < ApplicationController
             @form.section3 = Section3.create!()
             @form.section4 = Section4.create!()
             @form.section5 = Section5.create!()
-            @form.researcher.create()
+            @form.researcher.create({:investigator_type => "Principle"})
         else
             @form = Form.create!({:human => false})
             @section1 = Section1.create!()
@@ -35,7 +35,7 @@ class FormsController < ApplicationController
             @form.section3animal = Section3animal.create!()
             @form.section4animal = Section4animal.create!()
             @form.section5 = Section5.create!()
-            @form.researcher.create()
+            @form.researcher.create({:investigator_type => "Principle"})
         end
         
         flash[:notice] = "#{@section1.project_name} was successfully created."

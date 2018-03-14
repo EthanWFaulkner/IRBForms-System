@@ -29,6 +29,7 @@ class Section2Controller < ApplicationController
     
     def update
         @section2 = Section2.find params[:id]
+        byebug
         @section2.update_attributes!(section2_params)
         flash[:success] = "Section 2 was successfully updated."
         redirect_to forms_path

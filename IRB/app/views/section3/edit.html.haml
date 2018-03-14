@@ -1,5 +1,6 @@
 %h2 Edit Section 3
 = form_tag section3_path(@section3), :method => :put do
+    - #byebug
     -#TODO: For some reason this form generates an error on submission because the HTTP verb is POST, instead of PUT.
     -#Line 2 defines the HTTP verb as PUT, and this form appears to be defined the same as section1, section2, section3animal, etc.
     %div{:class => 'form-group'}
@@ -23,11 +24,11 @@
     
     %div{:class => 'form-group'}
         = label :section3, :min_participants, @section3text[6].text_value
-        = number_field_tag :section3, :min_participants, :class => 'form-control'
+        = number_field(:section3, :min_participants, :class => 'form-control')
         
     %div{:class => 'form-group'}
         = label :section3, :max_participants, @section3text[7].text_value
-        = number_field_tag :section3, :max_participants, :class => 'form-control'
+        = number_field(:section3, :max_participants, :class => 'form-control')
     
     %h6= @section3text[8].text_value
     

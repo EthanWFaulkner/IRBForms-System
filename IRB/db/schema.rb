@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20180311023311) do
     t.text     "phone"
     t.text     "department"
     t.text     "researcher_type"
+    t.text     "investigator_type"
     t.integer  "form_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "researchers", ["form_id"], name: "index_researchers_on_form_id"

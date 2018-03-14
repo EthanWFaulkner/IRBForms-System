@@ -2,10 +2,12 @@ class Section4Controller < ApplicationController
     
     def section4_params
         params.require(:section4).permit(
-        :what_data,
+        :data_collection_proc,
         :location_organization_data_collection,
-        :procedures_of_data_collection,
+        :data_to_be_collected,
         :period_of_data_collection,
+        :prospective_or_retrospective,
+        :anonymous_data,
         :data_collection_instruments,
         :data_stored_how,
         :length_of_data_retention,

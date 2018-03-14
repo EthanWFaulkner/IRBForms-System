@@ -11,6 +11,7 @@
             %th Name
             %th Position
             %th Email
+            %th Type
             %th Edit Researcher
     %tbody
         - @researchers.each do|researcher|
@@ -19,6 +20,7 @@
                 %td= researcher.name
                 %td= researcher.position
                 %td= researcher.email
+                %td= researcher.investigator_type
                 %td= link_to "Edit", edit_researcher_path(researcher)
 
 %p        
