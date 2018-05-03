@@ -22,9 +22,10 @@ class Section1Controller < ApplicationController
     end
     
     def edit
+        @form = Form.find(params[:id])
         @section1text = Formtext.where({:section => 1, :human_form => false}).order("sub_section ASC").all
-        #byebug
         @section1 = Section1.find params[:id]
+        @section2 = Section2.find_by_form_id @form.id
     end
     
     def update

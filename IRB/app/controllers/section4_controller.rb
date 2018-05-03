@@ -18,9 +18,11 @@ class Section4Controller < ApplicationController
     end
     
     def edit
+        @form = Form.find(params[:id])
         @section4text = Formtext.where({:section => 4, :human_form => true}).order("sub_section ASC").all
-        #byebug
+        @section3 = Section3.find_by_form_id @form.id
         @section4 = Section4.find params[:id]
+        @section5 = Section5.find_by_form_id @form.id
     end
     
     def update
