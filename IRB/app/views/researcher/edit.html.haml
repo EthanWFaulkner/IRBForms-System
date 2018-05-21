@@ -24,7 +24,7 @@
     %div{:class => 'form-group'}
         = label :researcher, :department, @researchertext[6].text_value
         = text_area :researcher, :department, :class => 'form-control'
-        
+    
     %div{:class => 'form-check'}
         = radio_button :researcher, :researcher_type, "faculty", { :class => 'form-check-input', :value => 'faculty' }
         = label :researcher, :researcher_type, @researchertext[7].text_value, :class => 'form-check-label'

@@ -7,6 +7,7 @@ class CreateResearchers < ActiveRecord::Migration
       t.text :phone
       t.text :department
       t.text :researcher_type
+      t.text :investigator_type
       t.belongs_to :form, index: true
       t.integer :form_id
       t.timestamps null: false

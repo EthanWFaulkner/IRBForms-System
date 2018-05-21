@@ -2,10 +2,12 @@ class Section4Controller < ApplicationController
     
     def section4_params
         params.require(:section4).permit(
-        :what_data,
+        :data_collection_proc,
         :location_organization_data_collection,
-        :procedures_of_data_collection,
+        :data_to_be_collected,
         :period_of_data_collection,
+        :prospective_or_retrospective,
+        :anonymous_data,
         :data_collection_instruments,
         :data_stored_how,
         :length_of_data_retention,
@@ -16,9 +18,11 @@ class Section4Controller < ApplicationController
     end
     
     def edit
+        @form = Form.find(params[:id])
         @section4text = Formtext.where({:section => 4, :human_form => true}).order("sub_section ASC").all
-        #byebug
+        @section3 = Section3.find_by_form_id @form.id
         @section4 = Section4.find params[:id]
+        @section5 = Section5.find_by_form_id @form.id
     end
     
     def update

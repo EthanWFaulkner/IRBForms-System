@@ -9,8 +9,9 @@ class Section5Controller < ApplicationController
     end
     
     def edit
+        @form = Form.find(params[:id])
         @section5text = Formtext.where({:section => 5, :human_form => false}).order("sub_section ASC").all
-        #byebug
+        @section4 = Section4.find_by_form_id @form.id
         @section5 = Section5.find params[:id]
     end
     
